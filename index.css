@@ -117,7 +117,7 @@ body{
     background-color: white;
     display: grid;
     grid-template-columns: 30% 70%;
-
+    
 }
 
 .proyectos h1{
@@ -147,7 +147,7 @@ body{
     margin-left: 150px;
     text-align: center;
     display: flex;
-    position: relative;
+    /* position: relative; */
 }
 #detalle-proyecto img{
     width: 100%;
@@ -163,17 +163,42 @@ body{
     color: #3B4358;
 }
 
-#boton-slide{
-    font-size: 40px;
-    margin-left: 100px;
-    font-weight: bold;
-    color: aliceblue;
-    background-color: black;
-    position: absolute;
+#indice{
+    width: 50px;
+    display: inline-block;
+    margin: 0;
+    height: 50px;
+    transform: translateY(-5px);
+    transform: translateX(100px);
 }
- #boton-slide:hover{
+
+#numeros-indice{
+    text-align: center;
+    font-weight:bold ;
+    font-size: 18px;
+    color: #3B4358;
+    margin: 0;
+    padding: 0;
+}
+.boton-carrusel{
+    font-size: 32px;
+    color: #3B4358;
+    transform: translateX(200px);
+}
+.boton-carrusel:hover{
     cursor: pointer;
-} 
+}
+#paginacion{
+    grid-column: span 2; /* Ocupa dos columnas completas */
+    /* background-color: lightcoral; */
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    padding-top: 0px;
+    align-items: center;
+    transform: translateY(-20px);
+}
+
 
 
 
