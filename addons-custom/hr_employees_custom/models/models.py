@@ -117,7 +117,7 @@ class HrEmployeeMedicalIncapacity(models.Model):
     _order = 'initial_date desc'
 
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True, ondelete='cascade')
-    medical_reason_id = fields.Many2one('medical.reasons', string='Medical Reason', required=True)
+    medical_reason_id = fields.Many2one('medical.reasons', string='Medical Reason', required=True,domain=[('active', '=', True)])
     initial_date = fields.Date(string='Initial Date', required=True)
     final_date = fields.Date(string='Final Date', required=True)
     days = fields.Integer(string='Days', compute='_compute_days', store=True)

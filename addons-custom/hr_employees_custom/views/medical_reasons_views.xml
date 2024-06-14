@@ -39,7 +39,8 @@
             id="medical_reasons_menu"
             name="Medical Reasons"
             action="medical_reasons_custom_action"
-            parent="hr.menu_hr_root"
-            sequence="10"/>
+            parent="hr.menu_config_employee"
+            sequence="8"/>
+            
     </data>
 </odoo>
