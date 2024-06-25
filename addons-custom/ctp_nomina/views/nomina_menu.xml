@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+            <menuitem
+            id="nomina_menu"
+            name="CTP Payroll"
+            sequence="10"/>
+
+            <menuitem name="Configuration" id="nomina_configuration_menu"
+            parent="nomina_menu"
+            sequence="10"/>
+
+            <menuitem name="Configuration" id="nomina_payroll_menu"
+            parent="nomina_configuration_menu"
+            sequence="20"/>
+
+            <menuitem name="Master Data" id="nomina_masterdata_menu"
+            parent="nomina_configuration_menu"
+            sequence="5"/>
+            
+            <menuitem name="Banks" id="nomina_banks_menu"
+            parent="nomina_masterdata_menu"
+            action="nomina_action"
+            sequence="1"/>
+
+            <menuitem name="Employee Types" id="nomina_emptypes_menu"
+            parent="nomina_masterdata_menu"
+            action="employee_types_action"
+            sequence="2"/>
+
+            <menuitem name="Payday Types" id="nomina_paydaytypes_menu"
+            parent="nomina_masterdata_menu"
+            action="pay_day_options_action"
+            sequence="3"/>
+
+            <menuitem name="Benefits" id="nomina_benefits_menu"
+            parent="nomina_payroll_menu"
+            action="benefits_action"
+            sequence="1"/>
+
+            <menuitem name="Deductions" id="nomina_deductions_menu"
+            parent="nomina_payroll_menu"
+            action="deductions_action"
+            sequence="2"/>
+
+            <menuitem name="State Account" id="nomina_state_account_menu"
+            parent="nomina_masterdata_menu"
+            action="action_state_account"
+            sequence="4"/>
+
+            
+            
+    
+    </data>
+    
+
+</odoo>

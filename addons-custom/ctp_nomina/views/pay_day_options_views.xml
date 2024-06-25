@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <record id="payday_options_view_form" model="ir.ui.view">
+            <field name="name">payday_options.view.form</field>
+            <field name="model">pay.day.options</field>
+            <field name="arch" type="xml">
+                <form string="Pay Day Options">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="active" widget='boolean_toggle'/>
+                        </group>
+                        <group>
+                            <div class="oe_chatter">
+                                <field name="message_ids" widget="mail_thread"/>
+                                <field name="activity_ids" widget="mail_activity"/>
+                            </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="payday_options_view_tree" model="ir.ui.view">
+            <field name="name">payday_options.view.tree</field>
+            <field name="model">pay.day.options</field>
+            <field name="arch" type="xml">
+                <tree string="Pay Day Options">
+                    <field name="name" />
+                    <field name="active" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="pay_day_options_action" model="ir.actions.act_window">
+            <field name="name">Pay Day options</field>
+            <field name="res_model">pay.day.options</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    
+    </data>
+    
+
+</odoo>

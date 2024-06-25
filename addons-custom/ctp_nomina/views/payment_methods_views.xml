@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <record id="payment_methods_view_form" model="ir.ui.view">
+            <field name="name">payment.methods.view.form</field>
+            <field name="model">payment.methods</field>
+            <field name="arch" type="xml">
+                <form string="Payment Methods">
+                    <sheet>
+                        <group>
+                            <field name="state" />
+                            <field name="weekly" />
+                            <field name="bi_weekly" />
+                            <field name="semi_monthly" />
+                            <field name="monthly" />
+                            <field name="comments" string="Comments"/>
+                        </group>
+                        <group>
+                            <div class="oe_chatter">
+                                <field name="message_ids" widget="mail_thread"/>
+                                <field name="activity_ids" widget="mail_activity"/>
+                            </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="payment_methods_view_tree" model="ir.ui.view">
+            <field name="name">payment.methods.view.tree</field>
+            <field name="model">payment.methods</field>
+            <field name="arch" type="xml">
+                <tree string="Payment Methods">
+                    <field name="state" />
+                    <field name="weekly" />
+                    <field name="bi_weekly" />
+                    <field name="semi_monthly" />
+                    <field name="monthly" />
+                    <field name="comments" string=" " invisible="1"/>
+                    <button name="action_view_comments" string="See Comments" type="object" class="oe_highlight"/>
+                </tree>
+            </field>
+        </record>
+
+        
+
+        <record id="payment_methods_action" model="ir.actions.act_window">
+            <field name="name">Payment Methods</field>
+            <field name="res_model">payment.methods</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="payment_methods_view_tree"/>
+        </record>
+
+        <record id="payment_methods_view_form_popup" model="ir.ui.view">
+            <field name="name">payment.methods.view.form.popup</field>
+            <field name="model">payment.methods</field>
+            <field name="arch" type="xml">
+                <form string="Comments">
+                    <sheet>
+                        <group>
+                            <field name="comments" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <menuitem name="Payment Method" id="payment_methods_menu"
+            parent="nomina_masterdata_menu"
+            action="payment_methods_action"
+            sequence="8"/>
+    
+    </data>
+    
+
+</odoo>

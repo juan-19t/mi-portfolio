@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <record id="employee_types_view_form" model="ir.ui.view">
+            <field name="name">employee_types.view.form</field>
+            <field name="model">employee.types</field>
+            <field name="arch" type="xml">
+                <form string="Employee Types">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="active" widget='boolean_toggle'/>
+                        </group>
+                        <group>
+                            <div class="oe_chatter">
+                                <field name="message_ids" widget="mail_thread"/>
+                                <field name="activity_ids" widget="mail_activity"/>
+                            </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="employee_types_view_tree" model="ir.ui.view">
+            <field name="name">employee_types.view.tree</field>
+            <field name="model">employee.types</field>
+            <field name="arch" type="xml">
+                <tree string="Employee Types">
+                    <field name="name" />
+                    <field name="active" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="employee_types_action" model="ir.actions.act_window">
+            <field name="name">Employee Types</field>
+            <field name="res_model">employee.types</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    
+    </data>
+    
+
+</odoo>

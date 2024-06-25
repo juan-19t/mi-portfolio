@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record id="view_form_state_account" model="ir.ui.view">
+            <field name="name">state.account.form</field>
+            <field name="model">state.account</field>
+            <field name="arch" type="xml">
+                <form string="State Account">
+                    <sheet>
+                        <group>
+                            <field name="country"/>
+                            <field name="state"/>
+                            <field name="account"/>
+                            <field name="status"/>
+                        </group>
+                        <group>
+                            <div class="oe_chatter">
+                                <field name="message_ids" widget="mail_thread"/>
+                                <field name="activity_ids" widget="mail_activity"/>
+                            </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_state_account" model="ir.ui.view">
+            <field name="name">state.account.tree</field>
+            <field name="model">state.account</field>
+            <field name="arch" type="xml">
+                <tree string="State Account">
+                    <field name="country"/>
+                    <field name="state"/>
+                    <field name="account"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_state_account" model="ir.actions.act_window">
+            <field name="name">State Accounts</field>
+            <field name="res_model">state.account</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+    </data>
+</odoo>
